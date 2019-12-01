@@ -9,7 +9,7 @@ parser.add_argument('-p', dest='hunt_projet', help='-p NAME_PROJECT', required=T
 
 args = parser.parse_args()
 
-os.mkdir('output/'+args.hunt_projet)
+os.mkdir(args.hunt_projet)
 
 file = open(args.hunt_file,'r')
 for url in file:
@@ -24,5 +24,5 @@ for url in file:
 	DRIVER = 'chromedriver'
 	driver = webdriver.Chrome(DRIVER, chrome_options=chrome_options)
 	driver.get(url)
-	driver.save_screenshot("output/{}/{}.png".format(args.hunt_projet,url_name))
+	driver.save_screenshot("{}/{}.png".format(args.hunt_projet,url_name))
 	driver.quit()
