@@ -1,14 +1,21 @@
-#Web Hunter Screen
+# Web Hunter Screen
 
-#This program aims to check active targets by saving screenshots in a project.
+O web hunter Screen realiza a captura de imagem apartir de uma lista
 
-#name = K40S
-#email = lgcarmo@protonmail.com
+### name = K40S
+### email = lgcarmo@protonmail.com
 
-#if not work do dowload chromedrive in other version
+if not work do dowload chromedrive in other version
 
-#USAGE
-
-
+### USAGE
 python3 webhunterscreen.py -f /file/domains.txt -p PROJECT
 
+
+
+# Principais opções
+
+-p Cria a pasta do projeto para armazenar as imagens.
+
+-f Carrga a uma lista contendo urls (Ex. https://site.com.br)
+
+--sqlite carrega arquivo sqlite gerado pelo TurboSeach by M4v3r1cK (https://github.com/helviojunior/turbosearch)
