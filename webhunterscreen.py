@@ -23,15 +23,18 @@ args = parser.parse_args()
 
 def import_dbstats():
     try:
-
+        urls = []
         conn = sqlite3.connect(args.hunt_sqlite)
 
         cursor = conn.execute("SELECT uri FROM stats;")
         for row in cursor:
            #print(f'{row[1]}')
-            return row[0]
+            if row[0] not in urls:
+                urls.append(row[0])
 
         conn.close()
+
+        return urls
     except:
         print('Database does not exist')
 
@@ -64,7 +67,8 @@ def main():
 
     if args.hunt_sqlite is not None:
         print('[+] Start ScreenShot Sqlite')
-        webhunterscreen(import_dbstats())
+        for uri in import_dbstats():
+            webhunterscreen(uri)
 
     elif args.hunt_file is not None:
         print('[+] Start ScreenShot Project File')
