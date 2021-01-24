@@ -26,10 +26,10 @@ def import_dbstats():
 
         conn = sqlite3.connect(args.hunt_sqlite)
 
-        cursor = conn.execute("SELECT * FROM stats;")
+        cursor = conn.execute("SELECT uri FROM stats;")
         for row in cursor:
            #print(f'{row[1]}')
-            return row[1]
+            return row[0]
 
         conn.close()
     except:
