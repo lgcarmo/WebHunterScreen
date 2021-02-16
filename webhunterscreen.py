@@ -66,15 +66,25 @@ def main():
         print('-p NameOfPoject')
 
     if args.hunt_sqlite is not None:
-        print('[+] Start ScreenShot Sqlite')
-        for uri in import_dbstats():
-            webhunterscreen(uri)
+        try:
+            print('[+] Start ScreenShot Sqlite')
+            for uri in import_dbstats():
+                try:
+	                webhunterscreen(uri)
+                except:
+                    pass
+
+        except:
+            pass
 
     elif args.hunt_file is not None:
         print('[+] Start ScreenShot Project File')
         file = open(args.hunt_file,'r')
         for url in file:
-            webhunterscreen(url)
+            try:
+                webhunterscreen(url)
+            except:
+                pass
 
     print('[+] Finished')
 
