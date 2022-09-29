@@ -6,7 +6,7 @@
 
 * -p Cria a pasta do projeto para armazenar as imagens.
 
-* -f Carrga a uma lista contendo urls (Ex. https://site.com.br)
+* -f Carrga a uma lista contendo urls (Ex. https://site.com.br) By lgcarmo(https://github.com/lgcarmo/Scrap_Forever)
 
 * --sqlite carrega arquivo sqlite gerado pelo TurboSeach by M4v3r1cK (https://github.com/helviojunior/turbosearch)
 
@@ -17,8 +17,9 @@
 
 ### Ferramentas relacionadas
 
-O Helvio Junior (M4v3r1cK) criou uma ferramenta (TurboSeach), Esta é uma ferramenta de busca (estilo brute-force) baseada em uma lista de palavras para automatizar o mapeamento de diretorios, a ferramenta está preparada para salvar seus resultados em uma arquivo SQLITE que pode ser consumido pelo WebHunterScreen.
+O Helvio Junior (M4v3r1cK) criou a ferramenta (TurboSeach), Esta é uma ferramenta de busca (estilo brute-force) baseada em uma lista de palavras para automatizar o mapeamento de diretorios, a ferramenta está preparada para salvar seus resultados em uma arquivo SQLITE que pode ser consumido pelo WebHunterScreen.
 
+O Luiz Carmo (K40S) criou a ferramenta (Scrp_Forever), está ferramenta é uma ferramenta para coletar url's em uma página de forma que não termine enquanto não chegar ate a ultima página.
 
 
 
