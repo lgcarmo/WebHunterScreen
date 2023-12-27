@@ -1,6 +1,6 @@
 **Web Hunter Screen**
 
-O Web Hunter Screen realiza o acesso automatizado às URLs e cria um screenshot de cada página.
+- [x] O Web Hunter Screen realiza o acesso automatizado às URLs e cria um screenshot de cada página.
 
 **Principais opções:**
 
