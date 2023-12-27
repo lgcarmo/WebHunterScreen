@@ -1,25 +1,22 @@
-# Web Hunter Screen
+**Web Hunter Screen**
 
-* O web hunter Screen realiza o acesso automatizado as URLs e cria um ScreenShoot de cada página. 
+O Web Hunter Screen realiza o acesso automatizado às URLs e cria um screenshot de cada página.
 
-# Principais opções
+**Principais opções:**
 
-* -p Cria a pasta do projeto para armazenar as imagens.
+- `-p`: Cria a pasta do projeto para armazenar as imagens.
+- `-f`: Carrega uma lista contendo URLs (Ex. https://site.com.br) por [K40S](https://github.com/lgcarmo/Scrap_Forever).
+- `--sqlite`: Carrega arquivo SQLite gerado pelo TurboSearch por [M4v3r1cK](https://github.com/helviojunior/turbosearch).
 
-* -f Carrga a uma lista contendo urls (Ex. https://site.com.br) By lgcarmo(https://github.com/lgcarmo/Scrap_Forever)
+**USO:**
+```bash
+$ python3 webhunterscreen.py -f /file/domains.txt -p PROJECT
+```
+```bash
+$ python3 webhunterscreen.py --sqlite FILE
+```
+**Ferramentas relacionadas:**
 
-* --sqlite carrega arquivo sqlite gerado pelo TurboSeach by M4v3r1cK (https://github.com/helviojunior/turbosearch)
+O Helvio Junior (M4v3r1cK) criou a ferramenta TurboSearch. Esta é uma ferramenta de busca (estilo brute-force) baseada em uma lista de palavras para automatizar o mapeamento de diretórios. A ferramenta está preparada para salvar seus resultados em um arquivo SQLite que pode ser consumido pelo Web Hunter Screen.
 
-### USAGE
-* python3 webhunterscreen.py -f /file/domains.txt -p PROJECT
-* python3 webhunterscreen.py --sqlite FILE
-
-
-### Ferramentas relacionadas
-
-O Helvio Junior (M4v3r1cK) criou a ferramenta (TurboSeach), Esta é uma ferramenta de busca (estilo brute-force) baseada em uma lista de palavras para automatizar o mapeamento de diretorios, a ferramenta está preparada para salvar seus resultados em uma arquivo SQLITE que pode ser consumido pelo WebHunterScreen.
-
-O Luiz Carmo (K40S) criou a ferramenta (Scrp_Forever), está ferramenta é uma ferramenta para coletar url's em uma página de forma que não termine enquanto não chegar ate a ultima página.
-
-
-
+O Luiz Carmo (K40S) criou a ferramenta Scrap Forever. Esta ferramenta é utilizada para coletar URLs em uma página de forma que não termine enquanto não chegar à última página.
