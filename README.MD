@@ -6,6 +6,7 @@
 
 - `-p`: Cria a pasta do projeto para armazenar as imagens.
 - `-f`: Carrega uma lista contendo URLs (Ex. https://site.com.br) por [K40S](https://github.com/lgcarmo/Scrap_Forever).
+- `-t`: Threads por tarefa (Default: 4)
 - `--sqlite`: Carrega arquivo SQLite gerado pelo TurboSearch por [M4v3r1cK](https://github.com/helviojunior/turbosearch).
 
 **USO:**
@@ -13,7 +14,13 @@
 $ python3 webhunterscreen.py -f /file/domains.txt -p PROJECT
 ```
 ```bash
+$ python3 webhunterscreen.py -f /file/domains.txt -p PROJECT -t 8
+```
+```bash
 $ python3 webhunterscreen.py --sqlite FILE
+```
+```bash
+$ python3 webhunterscreen.py --sqlite FILE -t 8
 ```
 **Ferramentas relacionadas:**
 
