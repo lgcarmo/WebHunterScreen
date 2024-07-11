@@ -1,4 +1,4 @@
-**Web Hunter Screen**
+# **Web Hunter Screen**
 
 - [x] O Web Hunter Screen realiza o acesso automatizado às URLs e cria um screenshot de cada página.
 
