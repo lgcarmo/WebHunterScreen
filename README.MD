@@ -1,29 +1,126 @@
-# **Web Hunter Screen**
+# 🕷️ WebHunterScreen
 
-- [x] O Web Hunter Screen realiza o acesso automatizado às URLs e cria um screenshot de cada página.
+Ferramenta de captura automatizada de screenshots de páginas web com suporte a múltiplas threads, modo headless e entrada via arquivo ou banco SQLite. Ideal para reconhecimento de ativos em pentests.
 
-**Principais opções:**
+---
 
-- `-p`: Cria a pasta do projeto para armazenar as imagens.
-- `-f`: Carrega uma lista contendo URLs (Ex. https://site.com.br) por [K40S](https://github.com/lgcarmo/Scrap_Forever).
-- `-t`: Threads por tarefa (Default: 4)
-- `--sqlite`: Carrega arquivo SQLite gerado pelo TurboSearch por [M4v3r1cK](https://github.com/helviojunior/turbosearch).
+## ⚙️ Funcionalidades
 
-**USO:**
+- Captura screenshots de sites usando Selenium + Chrome
+- Suporte a entrada via `.txt` ou banco SQLite (`TurboSearch`)
+- Execução em paralelo com múltiplas threads
+- Modo `headless` opcional (sem abrir a janela do navegador)
+- Delay configurável entre carregamento e captura
+- Armazena capturas em uma pasta com o nome do projeto
+
+---
+
+## 📦 Instalação
+
+### 1. Clone o repositório
+
 ```bash
-$ python3 webhunterscreen.py -f /file/domains.txt -p PROJECT
+git clone https://github.com/seuusuario/WebHunterScreen.git
+cd WebHunterScreen
 ```
-```bash
-$ python3 webhunterscreen.py -f /file/domains.txt -p PROJECT -t 8
-```
-```bash
-$ python3 webhunterscreen.py --sqlite FILE
-```
-```bash
-$ python3 webhunterscreen.py --sqlite FILE -t 8
-```
-**Ferramentas relacionadas:**
 
-O Helvio Junior (M4v3r1cK) criou a ferramenta TurboSearch. Esta é uma ferramenta de busca (estilo brute-force) baseada em uma lista de palavras para automatizar o mapeamento de diretórios. A ferramenta está preparada para salvar seus resultados em um arquivo SQLite que pode ser consumido pelo Web Hunter Screen.
+### 2. (Opcional) Crie um ambiente virtual
 
-O Luiz Carmo (K40S) criou a ferramenta Scrap Forever. Esta ferramenta é utilizada para coletar URLs em uma página de forma que não termine enquanto não chegar à última página.
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+### 3. Instale as dependências
+
+```bash
+pip install -r requirements.txt
+```
+
+> Requisitos do sistema:
+> - Python 3.8+
+> - Google Chrome ou Chromium instalado
+> - ChromeDriver será instalado automaticamente via `webdriver-manager`
+
+---
+
+## 🚀 Uso
+
+### A partir de um arquivo `.txt` com URLs
+
+```bash
+python3 webhunterscreen.py -f urls.txt -p projeto_site
+```
+
+### A partir de um banco SQLite (`TurboSearch`)
+
+```bash
+python3 webhunterscreen.py --sqlite resultados.db -p projeto_sqlite
+```
+
+### Usando modo `headless` e delay de 5 segundos
+
+```bash
+python3 webhunterscreen.py -f urls.txt -p meu_projeto --headless --delay 5
+```
+
+---
+
+## 🔧 Parâmetros
+
+| Parâmetro         | Descrição                                                                 |
+|-------------------|---------------------------------------------------------------------------|
+| `-f`              | Caminho do arquivo `.txt` com uma URL por linha                          |
+| `--sqlite`        | Caminho do banco SQLite com a tabela `stats` e a coluna `uri`            |
+| `-p`              | Nome do projeto (pasta onde os screenshots serão salvos)                 |
+| `-t`              | Número de threads para execução paralela (padrão: 4)                     |
+| `--headless`      | Executa o navegador em modo invisível (sem abrir a janela gráfica)       |
+| `--delay`         | Delay em segundos antes de capturar o screenshot (padrão: 2 segundos)    |
+
+⚠️ Use apenas um dos parâmetros de entrada: `-f` ou `--sqlite`.
+
+---
+
+## 🗂️ Exemplo de saída
+
+```
+projeto_site/
+├── www.google.com.png
+├── api.empresa.com.br.png
+└── login.sistema.local.png
+```
+
+---
+
+## 🧪 Exemplo de entrada (urls.txt)
+
+```
+https://www.google.com
+http://painel.minhaempresa.local
+https://admin.site.com.br
+```
+
+---
+
+## 📁 requirements.txt
+
+Crie um arquivo chamado `requirements.txt` com o seguinte conteúdo:
+
+```
+selenium>=4.10.0
+webdriver-manager>=3.8.6
+```
+
+---
+
+## 👨‍💻 Autor
+
+Desenvolvido por [Seu Nome](https://github.com/seuusuario)  
+Inspirado em atividades de automação de reconhecimento em segurança ofensiva.
+
+---
+
+## 🛡️ Licença
+
+Distribuído sob a Licença MIT.  
+Use com responsabilidade e ética profissional em segurança da informação.
