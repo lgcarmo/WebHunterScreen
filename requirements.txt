@@ -1,3 +1,4 @@
 selenium==3.141.0
 webdriver_manager==3.5.1
 argparse==1.4.0
+requests>=2.32.4 # not directly required, pinned by Snyk to avoid a vulnerability
